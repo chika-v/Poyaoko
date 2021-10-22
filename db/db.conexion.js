@@ -1,5 +1,4 @@
 require('dotenv').config()
-const {DataTypes, Model } = require('sequelize');
 const Sequelize = require('sequelize');
 
 const sequelize = new Sequelize('poyaoko', null, null, {
@@ -11,7 +10,7 @@ const sequelize = new Sequelize('poyaoko', null, null, {
             type: 'default',
             options: {
                 encrypt: true,
-                userName: process.env.DB_USER,
+                userName: process.env.DB_USR,
                 password: process.env.DB_PASS
             }
         },
