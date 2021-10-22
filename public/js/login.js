@@ -1,6 +1,6 @@
 async function login() {
-    const email = document.getElementById("correo").value
-    const password = document.getElementById("contraseña").value
+    const correo = document.getElementById("correo").value
+    const contraseña = document.getElementById("contraseña").value
     console.log(correo)
     try { 
       const makeLogin = await fetch('http://localhost:3000/login_usuario', {

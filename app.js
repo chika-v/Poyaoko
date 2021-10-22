@@ -7,7 +7,8 @@ const jwt = require("jsonwebtoken");
 const sequelize = require("./db/db.conexion");
 const Usuarios = require("./db/db.usuariologin");
 const Perfil = require("./db/db.perfil");
-
+const vistaUsuarios = require('./app/Views/usuariologinView')
+const vistaPerfiles = require('./app/Views/perfilView')
 
 app.use(express.static(__dirname + '/public'))
 app.set('view engine', 'ejs')
@@ -28,3 +29,5 @@ async function inicioServer() {
 }
 
 inicioServer();
+vistaUsuarios(app);
+vistaPerfiles(app);

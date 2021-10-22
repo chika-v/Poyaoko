@@ -1,5 +1,4 @@
 const {Op} = require('sequelize');
-const { UPSERT } = require('sequelize/types/lib/query-types');
 const Perfiles = require('../../db/db.perfil')
 
 module.exports.buscarPerfil = async (perfil) => {
@@ -46,9 +45,8 @@ module.exports.crearPerfiless = async (perfil) => {
 
 module.exports.editarPerfiles = async(id, perfil) => {
     try{
-        let resultado = await Perfiles.findByPk(id)
+        let perfilEncontrado = await Perfiles.findByPk(id)
         let resultado = perfilEncontrado.update(perfil)
-        console.log(resultado)
         return resultado
     }catch(error){
         console.log(error)
@@ -56,11 +54,10 @@ module.exports.editarPerfiles = async(id, perfil) => {
     }
 }
 
-module.exports.borraePerfiles = async(id, perfil) => {
+module.exports.borrarPerfiles = async(id) => {
     try{
-        let resultado = await Perfiles.findByPk(id)
-        let resultado = await perfilEncontrado.delete(perfil)
-        console.log(resultado)
+        let perfilEncontrado = await Perfiles.findByPk(id)
+        let resultado = await perfilEncontrado.delete(perfilEncontrado)
         return resultado
     }catch(error){
         console.log(error)

@@ -1,5 +1,4 @@
 const {Op} = require('sequelize');
-const { UPSERT } = require('sequelize/types/lib/query-types');
 const Usuarios = require('../../db/db.usuariologin')
 
 module.exports.encontrarUsuario = async (usuario)=> {
@@ -25,6 +24,7 @@ module.exports.buscarUsuario = async (usuario) => {
                 },
             }
         })
+        return resultado
     }catch (error){
         console.log(error)
         throw new Error ('Ops!, ¿Dónde quedo?')
@@ -55,9 +55,8 @@ module.exports.crearUsuarios = async (usuario)=> {
 
 module.exports.editarUsuarios = async(id, usuario) => {
     try{
-        let resultado = await Usuarios.findByPk(id)
+        let usuarioEncontrado = await Usuarios.findByPk(id)
         let resultado = usuarioEncontrado.update(usuario)
-        console.log(resultado)
         return resultado
     }catch(error){
         console.log(error)

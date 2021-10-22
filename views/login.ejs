@@ -1,0 +1,21 @@
+<%- include("cabeceras/index") %>
+<body class="cuerpo">
+  <main class="adorno_fondo">
+      <form class="formulario_login">    
+          <img class="mb-4" src="/img/login-logo.jpeg" alt="">
+          <h1 class="h3 mb-3 fw-normal titulo_login">Ingresa tus datos</h1>
+          <label for="inputEmail" class="visually-hidden">Nombre de usuario</label>
+          <input type="text" id="usuario" class="form-control" placeholder="Usuario" required autofocus>
+          <label for="inputPassword" class="visually-hidden">Contraseña</label>
+          <input type="contraseña" id="contraseña" class="form-control" placeholder="Contraseña" required>
+          <div class="checkbox mb-3">
+              <label>
+                <input type="checkbox" value="remember-me"> Recuerdame
+              </label>
+            </div>
+            <button class="w-100 btn btn-lg btn-primary" type="button" onclick="login()">Ingresar</button>
+   </form>
+  <main>
+  <script src="/js/login.js"></script>
+</body>
+</html>
